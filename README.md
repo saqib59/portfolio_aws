@@ -23,6 +23,8 @@ To push your code from GitHub to an Amazon S3 bucket, you can use the AWS CodePi
 
 - To redirect it to a specific domain you can add an record for your s3 bucked in your route 53 dashboard.
 
+- You must give the bucket the same name as the record that you want to use to route traffic to the bucket. For example, if you want to route traffic for example.com to an S3 bucket that is configured for website hosting, the name of the bucket must be example.com.
+
 Alternatively, you can also use the AWS CLI to sync the contents
 of your GitHub repository to an S3 bucket. To do this, you
 can use the aws s3 sync command and specify the path to your 
