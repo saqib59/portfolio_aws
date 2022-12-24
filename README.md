@@ -7,6 +7,8 @@ A brief description on how to connect your static website hosted on Aws s3 with 
 ## Lab Overview
 
 
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
 
 To push your code from GitHub to an Amazon S3 bucket, you can use the AWS CodePipeline service. Here's an outline of the steps you can follow:
 
