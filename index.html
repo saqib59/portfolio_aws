@@ -606,12 +606,20 @@
         var valid = jQuery(this).valid();
     if (valid) {
       var serialize_form = $(this).serialize();
-          
+
       jQuery.ajax({
         type:"POST",
-        url: 'https://tiia8hscsg.execute-api.us-east-1.amazonaws.com/production',
+        url: 'https://h1nihb2yna.execute-api.us-east-1.amazonaws.com/prod',
         data: serialize_form,
         dataType : 'json',
+        contentType:'application/json',
+         headers: 
+            {
+              'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'
+            },
+        beforeSend: function(response) {
+            response.setRequestHeader("x-api-key", "qxvfSDKefd2HGYR9k7fbr42QkcEXM7122wU4G7Ue");
+        },
         success: function (response) {
                       console.log(response);
           jQuery(".alert-success").fadeIn();
