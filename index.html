@@ -540,7 +540,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form  method="post" role="form" class="php-email-form">
+            <form  method="post" role="form" class="php-email-form" enctype="multipart/form-data">
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -609,13 +609,14 @@
 
       jQuery.ajax({
         type:"POST",
-        url: 'https://h1nihb2yna.execute-api.us-east-1.amazonaws.com/prod',
+        url: 'https://h1nihb2yna.execute-api.us-east-1.amazonaws.com/prod/contactform',
         data: serialize_form,
         dataType : 'json',
-        contentType:'application/json',
+        crossDomain: "true",
+        contentType: "application/json; charset=utf-8",
          headers: 
             {
-              'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*'
+              'Access-Control-Allow-Origin': '*'
             },
         beforeSend: function(response) {
             response.setRequestHeader("x-api-key", "qxvfSDKefd2HGYR9k7fbr42QkcEXM7122wU4G7Ue");
