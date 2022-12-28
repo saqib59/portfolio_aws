@@ -609,20 +609,13 @@
 
       jQuery.ajax({
         type:"POST",
-        url: 'https://h1nihb2yna.execute-api.us-east-1.amazonaws.com/prod/contactform',
+        url: 'https://lh9elaeb7e.execute-api.us-east-1.amazonaws.com/production/contactformpy',
         data: serialize_form,
         dataType : 'json',
         crossDomain: "true",
-        contentType: "application/json; charset=utf-8",
-         headers: 
-            {
-              'Access-Control-Allow-Origin': '*'
-            },
-        beforeSend: function(response) {
-            response.setRequestHeader("x-api-key", "qxvfSDKefd2HGYR9k7fbr42QkcEXM7122wU4G7Ue");
-        },
+        contentType: "application/json",
         success: function (response) {
-                      console.log(response);
+          console.log(response);
           jQuery(".alert-success").fadeIn();
 
           // jQuery("#register_submit").children().remove();
