@@ -599,25 +599,39 @@
   <script src="assets/js/main.js"></script>
 
   <script type="text/javascript">
+
+    function getFormData($form){
+      var unindexed_array = $form.serializeArray();
+      var indexed_array = {};
+
+      $.map(unindexed_array, function(n, i){
+          indexed_array[n['name']] = n['value'];
+      });
+
+      return indexed_array;
+    }
     jQuery(".php-email-form").submit(function(){
         event.preventDefault();
         jQuery(this).validate();
 
-        var valid = jQuery(this).valid();
+    var valid = jQuery(this).valid();
     if (valid) {
       var serialize_form = $(this).serialize();
+        var data = getFormData($(this))
+
+        var data2 = JSON.stringify(data);
+        console.log( "data ", data );
 
       jQuery.ajax({
         type:"POST",
         url: 'https://lh9elaeb7e.execute-api.us-east-1.amazonaws.com/production/contactformpy',
-        data: serialize_form,
+        data: JSON.stringify(data)  ,
         dataType : 'json',
         crossDomain: "true",
-        contentType: "application/json",
+        // contentType: "application/json",
         success: function (response) {
           console.log(response);
           jQuery(".alert-success").fadeIn();
-
           // jQuery("#register_submit").children().remove();
           // jQuery("#register_submit").prop("disabled",false);
           // var status = response.status;
@@ -642,7 +656,7 @@
                     },
                     error: function (errorThrown) {
                       alert('error');
-                      console.log(errorThrown);
+                      console.log("errorThrown ", errorThrown);
                     },
                 });
         }
