@@ -1,5 +1,5 @@
 
-# Host a serverless web app on s3.
+# Host a serverless web app on AWS S3 bucket.
 
 A brief description on how to connect your static website hosted on Aws s3 with the help of Aws CodePipeline.
 
