@@ -20,7 +20,7 @@ To push your code from GitHub to an Amazon S3 bucket, you can use the AWS CodePi
 - Create an S3 bucket to store your code.
 - Enable static website hosting for the bucket. To enable static website hosting, you will need to set the bucket's static website hosting configuration and specify the name of the index document and the error document.
 - Connect your GitHub repository to CodePipeline by following the instructions in the AWS documentation.
-- Create a new CodePipeline pipeline, and choose GitHub as the source provider.
+- Create a new CodePipeline and choose GitHub as the source provider.
 - In the pipeline configuration, specify the name of the S3 bucket you created as the destination for your code.
 - Configure the build and deployment stages of your pipeline as needed. You may need to create an Amazon Elastic Container Registry (ECR) repository and an Amazon Elastic Container Service (ECS) cluster to deploy your code to.
 - Run the pipeline to deploy your code from GitHub to S3.
